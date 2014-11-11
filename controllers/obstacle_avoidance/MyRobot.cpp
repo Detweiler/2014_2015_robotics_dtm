@@ -5,12 +5,15 @@
 MyRobot::MyRobot() : DifferentialWheels()
 {
     _time_step = 64;
+    int i;
 
     _left_speed = 0;
     _right_speed = 0;
 
     _mode = FORWARD;
 
+   // for (int i= 0; i=<15; ++i){
+       // _distance_sensor[i] = getDistanceSensor; }
     _distance_sensor[0] = getDistanceSensor("ds0");
     _distance_sensor[0]->enable(_time_step);
     _distance_sensor[1] = getDistanceSensor("ds1");
