@@ -58,7 +58,7 @@ void MyRobot::run()
                 red = _spherical_camera->imageGetRed(image_s, image_width_s, x, y);
                 blue = _spherical_camera->imageGetBlue(image_s, image_width_s, x, y);
 
-                if ((green > 245) && (red > 245) && (blue > 0)) {
+                if ((green > 1) && (red > 1) && (blue == 0)) {
                     sum = sum + 1;
                 }
             }
@@ -74,13 +74,13 @@ void MyRobot::run()
         // Set the motor speeds
         setSpeed(_left_speed, _right_speed);
 
-        if (percentage_yellow > 8 ){
+        if (percentage_yellow > 0.8 ){
             cout << "yellow line aproaching" << endl;
 
-            if (percentage_yellow > 10 ){
+            if (percentage_yellow > 1 ){
                 cout << "yellow line APROACHING" << endl;
 
-                if (percentage_yellow > 14 ){
+                if (percentage_yellow > 1.2 ){
                     cout << "yellow line reach." << endl << endl;
                     setSpeed (0, 0);
                 }
